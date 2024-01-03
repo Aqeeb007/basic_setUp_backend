@@ -1,0 +1,33 @@
+-- CreateTable
+CREATE TABLE "Asset" (
+    "id" TEXT NOT NULL,
+    "assetId" TEXT NOT NULL,
+    "vendorName" TEXT NOT NULL,
+    "thirdPartyName" TEXT NOT NULL,
+    "assetDescription" TEXT NOT NULL,
+    "assetCode" TEXT NOT NULL,
+    "capacity" TEXT NOT NULL,
+    "uom" TEXT NOT NULL,
+    "inOutWarranty" TEXT NOT NULL,
+    "assetAllocationDate" TEXT NOT NULL,
+    "statusId" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "isActive" TEXT NOT NULL,
+    "latLong" TEXT NOT NULL,
+    "remarks" TEXT NOT NULL,
+    "securityDeposit" TEXT NOT NULL,
+    "agreementDetails" TEXT NOT NULL,
+    "dispatchDate" TEXT NOT NULL,
+    "invoiceID" TEXT NOT NULL,
+    "invoiceDate" TEXT NOT NULL,
+    "purchaseCost" TEXT NOT NULL,
+    "leaseControlNo" TEXT NOT NULL,
+    "leaseControlStartDate" TEXT NOT NULL,
+    "leaseControlEndDate" TEXT NOT NULL,
+    "leaseBasicPrice" TEXT NOT NULL,
+    "gstPer" TEXT NOT NULL,
+    "leasePaymentAmount" TEXT NOT NULL,
+    "leaseScheduleMonths" TEXT NOT NULL,
+
+    CONSTRAINT "Asset_pkey" PRIMARY KEY ("id")
+);

@@ -1,0 +1,54 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  assets    Asset[]
+}
+
+model Asset {
+  id                    String    @id @default(uuid())
+  vendorName            String?
+  thirdPartyName        String?
+  assetDescription      String?
+  assetCode             String?
+  capacity              String?
+  uom                   String?
+  inOutWarranty         String?
+  assetAllocationDate   String?
+  statusId              String?
+  category              String?
+  isActive              String?
+  latLong               String?
+  remarks               String?
+  securityDeposit       String?
+  agreementDetails      String?
+  dispatchDate          String?
+  invoiceID             String?
+  invoiceDate           String?
+  purchaseCost          String?
+  leaseControlNo        String?
+  leaseControlStartDate String?
+  leaseControlEndDate   String?
+  leaseBasicPrice       String?
+  gstPer                String?
+  leasePaymentAmount    String?
+  status                String    @default("PENDING")
+  leaseScheduleMonths   String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime? @updatedAt
+  createdById           String?
+  createdBy             User?     @relation(fields: [createdById], references: [id])
+}
